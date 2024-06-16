@@ -38,4 +38,21 @@ namespace EspacioCalculadora
         }
     }
 }
+    public enum Cargos{
+        Auxiliar,
+        Administrativo,
+        Ingeniero,
+        Especialista,
+        Investigador
+    }
+    public class Empleado{
+        public string nombre;
+        public string apellido;
+        public DateTime FechaNacimiento;
+        //S: SOLTERO -- C: COMPROMETIDO//
+        public char estadoCivil;
+        public DateTime fechaIngreso;
+        public double sueldoBasico;
+        public Cargos cargo;
+    }
 
