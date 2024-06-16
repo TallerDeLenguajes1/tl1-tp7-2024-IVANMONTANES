@@ -54,5 +54,20 @@ namespace EspacioCalculadora
         public DateTime fechaIngreso;
         public double sueldoBasico;
         public Cargos cargo;
+
+        //metodos//
+        public void antiguedad(){
+            DateTime fechaActual = DateTime.Now;
+            int antiguedad = fechaActual.Year - fechaIngreso.Year;
+            if(fechaActual.Month > fechaIngreso.Month){
+                antiguedad--;
+            }
+            else if(fechaActual.Month == fechaIngreso.Month){
+                if(fechaActual.Day > fechaIngreso.Day){
+                    antiguedad--;
+                }
+            }
+            Console.WriteLine("antiguedad: "+antiguedad);
+        }
     }
 
