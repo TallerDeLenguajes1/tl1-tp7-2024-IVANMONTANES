@@ -56,18 +56,28 @@ namespace EspacioCalculadora
         public Cargos cargo;
 
         //metodos//
-        public void antiguedad(){
+        private int calcularDiferencia(DateTime fecha){
             DateTime fechaActual = DateTime.Now;
-            int antiguedad = fechaActual.Year - fechaIngreso.Year;
-            if(fechaActual.Month > fechaIngreso.Month){
+            int antiguedad = fechaActual.Year - fecha.Year;
+            if(fechaActual.Month > fecha.Month){
                 antiguedad--;
             }
-            else if(fechaActual.Month == fechaIngreso.Month){
+            else if(fechaActual.Month == fecha.Month){
                 if(fechaActual.Day > fechaIngreso.Day){
                     antiguedad--;
                 }
             }
-            Console.WriteLine("antiguedad: "+antiguedad);
+            return antiguedad;
+        }
+
+        public void antiguedad(){
+            int antiguedad = calcularDiferencia(fechaIngreso);
+            Console.WriteLine("antiguedad "+antiguedad);
+        }
+
+        public void edad(){
+            int edad = calcularDiferencia(FechaNacimiento);
+            Console.WriteLine("edad "+edad);
         }
     }
 
