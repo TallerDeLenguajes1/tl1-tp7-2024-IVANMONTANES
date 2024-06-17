@@ -107,6 +107,11 @@ namespace EspacioCalculadora
             if(cargo == Cargos.Ingeniero || cargo == Cargos.Especialista){
                 adicional *= 1.5;
             }
+
+            //iii//
+            if(estadoCivil == 'c'){
+                adicional += 150000;
+            }
             Console.WriteLine("adicional "+adicional);
         }
 
