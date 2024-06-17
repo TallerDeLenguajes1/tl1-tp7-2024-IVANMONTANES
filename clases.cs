@@ -92,8 +92,8 @@ namespace EspacioCalculadora
             Console.WriteLine("le faltan "+jubiladoEn+" para jubilarse");
         }
 
-        public void calcularSalario(){
-            double salario,adicional = 0;
+        public double calcularAdicional(){
+            double adicional = 0;
             int antiguedad = calcularDiferencia(fechaIngreso);
             //i//
             if(antiguedad <= 20){
@@ -112,7 +112,13 @@ namespace EspacioCalculadora
             if(estadoCivil == 'c'){
                 adicional += 150000;
             }
-            Console.WriteLine("adicional "+adicional);
+            return adicional;
+        }
+
+        public void salario(){
+            double adicional = calcularAdicional();
+            double salario = sueldoBasico + adicional;
+            Console.WriteLine("salario: $"+salario);
         }
 
         

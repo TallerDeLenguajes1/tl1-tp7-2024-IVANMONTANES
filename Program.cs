@@ -1,26 +1,35 @@
 using EspacioCalculadora;
 Empleado[] empleados = new Empleado[3];
 //empleado 1//
+empleados[0] = new Empleado();
 empleados[0].nombre = "bruno";
 empleados[0].apellido = "galvan";
 empleados[0].cargo = Cargos.Administrativo;
 empleados[0].estadoCivil = 's';
-empleados[0].fechaIngreso = new DateTime(2015,3,15);
+empleados[0].fechaIngreso = new DateTime(2015,6,17);
 empleados[0].FechaNacimiento = new DateTime(2004,10,21);
 empleados[0].sueldoBasico = 1100000;
 //empleado 2//
-empleados[0].nombre = "santiago";
-empleados[0].apellido = "gonzalez";
-empleados[0].cargo = Cargos.Ingeniero;
-empleados[0].estadoCivil = 's';
-empleados[0].fechaIngreso = new DateTime(2010,6,2);
-empleados[0].FechaNacimiento = new DateTime(2005,2,14);
-empleados[0].sueldoBasico = 1350000;
+empleados[1] = new Empleado();
+empleados[1].nombre = "santiago";
+empleados[1].apellido = "gonzalez";
+empleados[1].cargo = Cargos.Ingeniero;
+empleados[1].estadoCivil = 's';
+empleados[1].fechaIngreso = new DateTime(2010,3,5);
+empleados[1].FechaNacimiento = new DateTime(2005,2,14);
+empleados[1].sueldoBasico = 1450000;
 //empleado 3//
-empleados[0].nombre = "vicente";
-empleados[0].apellido = "alzogaray";
-empleados[0].cargo = Cargos.Auxiliar;
-empleados[0].estadoCivil = 'c';
-empleados[0].fechaIngreso = new DateTime(2021,5,5);
-empleados[0].FechaNacimiento = new DateTime(2005,4,10);
-empleados[0].sueldoBasico = 550000;
+empleados[2] = new Empleado();
+empleados[2].nombre = "vicente";
+empleados[2].apellido = "alzogaray";
+empleados[2].cargo = Cargos.Auxiliar;
+empleados[2].estadoCivil = 'c';
+empleados[2].fechaIngreso = new DateTime(2021,8,17);
+empleados[2].FechaNacimiento = new DateTime(2005,4,10);
+empleados[2].sueldoBasico = 550000;
+
+double montoTotal = 0;
+for(int i = 0; i < 3; i++){
+    montoTotal += empleados[i].sueldoBasico + empleados[i].calcularAdicional();
+}
+Console.WriteLine("monto total en salarios: $"+montoTotal);
