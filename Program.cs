@@ -9,3 +9,4 @@ NuevoEmpleado.sueldoBasico = 5200000;
 NuevoEmpleado.cargo = Cargos.Ingeniero;
 NuevoEmpleado.antiguedad();
 NuevoEmpleado.edad();
+NuevoEmpleado.jubilacion();

@@ -75,11 +75,21 @@ namespace EspacioCalculadora
             Console.WriteLine("antiguedad "+antiguedad);
         }
 
-        public void edad(){
+        private int calcularEdad(){
             DateTime fechaActual = DateTime.Now;
             TimeSpan edad = fechaActual - FechaNacimiento;
             int edadAnios = (int)(edad.TotalDays / 365.25);
-            Console.WriteLine("edad "+edadAnios);
+            return edadAnios;
+        }
+
+        public void edad(){
+            int edad = calcularEdad();
+            Console.WriteLine("edad "+edad);
+        }
+
+        public void jubilacion(){
+            int jubiladoEn = 65 - calcularEdad();
+            Console.WriteLine("le faltan "+jubiladoEn+" para jubilarse");
         }
     }
 
