@@ -72,7 +72,7 @@ namespace EspacioCalculadora
 
         public void antiguedad(){
             int antiguedad = calcularDiferencia(fechaIngreso);
-            Console.WriteLine("antiguedad "+antiguedad);
+            Console.WriteLine("antiguedad: "+antiguedad+" años");
         }
 
         private int calcularEdad(){
@@ -84,12 +84,17 @@ namespace EspacioCalculadora
 
         public void edad(){
             int edad = calcularEdad();
-            Console.WriteLine("edad "+edad);
+            Console.WriteLine("edad: "+edad+" años");
+        }
+
+        public int calcularJubilacion(){
+            int jubiladoEn = 65 - calcularEdad();
+            return jubiladoEn;
         }
 
         public void jubilacion(){
-            int jubiladoEn = 65 - calcularEdad();
-            Console.WriteLine("le faltan "+jubiladoEn+" para jubilarse");
+            int jubiladoEn = calcularJubilacion();
+            Console.WriteLine("se jubila en: "+jubiladoEn+" años");
         }
 
         public double calcularAdicional(){
@@ -120,6 +125,23 @@ namespace EspacioCalculadora
             double salario = sueldoBasico + adicional;
             Console.WriteLine("salario: $"+salario);
         }
+
+        public void mostrarDatos(){
+            Console.WriteLine("----------"+nombre+" "+apellido+"----------");
+            Console.WriteLine("cargo: "+cargo.ToString());
+            if(estadoCivil == 's'){
+                Console.WriteLine("estado civil: soltero");
+            }
+            else{
+                Console.Write("estado civil: comprometido");
+            }
+            edad();
+            salario();
+            antiguedad();
+            jubilacion();
+            Console.WriteLine("fecha de nacimiento: "+FechaNacimiento.ToString("dd/MM/yyyy"));
+            Console.WriteLine("fecha de ingreso: "+fechaIngreso.ToString("dd/MM//yyyy"));
+            }
 
         
     }
