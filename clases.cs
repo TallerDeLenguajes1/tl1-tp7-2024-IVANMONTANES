@@ -76,8 +76,10 @@ namespace EspacioCalculadora
         }
 
         public void edad(){
-            int edad = calcularDiferencia(FechaNacimiento);
-            Console.WriteLine("edad "+edad);
+            DateTime fechaActual = DateTime.Now;
+            TimeSpan edad = fechaActual - FechaNacimiento;
+            int edadAnios = (int)(edad.TotalDays / 365.25);
+            Console.WriteLine("edad "+edadAnios);
         }
     }
 
