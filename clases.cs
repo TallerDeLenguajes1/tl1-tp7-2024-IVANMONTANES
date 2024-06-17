@@ -91,5 +91,20 @@ namespace EspacioCalculadora
             int jubiladoEn = 65 - calcularEdad();
             Console.WriteLine("le faltan "+jubiladoEn+" para jubilarse");
         }
+
+        public void calcularSalario(){
+            double salario,adicional = 0;
+            int antiguedad = calcularDiferencia(fechaIngreso);
+            //i//
+            if(antiguedad <= 20){
+                adicional += antiguedad * ((1 * sueldoBasico)/100);
+            }
+            else{
+                adicional += (25 * sueldoBasico) / 100;
+            }
+            Console.WriteLine("adicional "+adicional);
+        }
+
+        
     }
 
