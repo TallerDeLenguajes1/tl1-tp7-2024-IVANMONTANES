@@ -102,6 +102,11 @@ namespace EspacioCalculadora
             else{
                 adicional += (25 * sueldoBasico) / 100;
             }
+
+            //ii//
+            if(cargo == Cargos.Ingeniero || cargo == Cargos.Especialista){
+                adicional *= 1.5;
+            }
             Console.WriteLine("adicional "+adicional);
         }
 
